@@ -1,7 +1,7 @@
-import mongoose, { Schema } from "mongoose";
-mongoose.connect('mongodb://127.0.0.1:27017/school');
+import mongoose from "mongoose";
 
-const schemaTasks = new Schema({
+
+const Student = new mongoose.Schema({
     name: {
         type: String,
     },
@@ -11,9 +11,5 @@ const schemaTasks = new Schema({
     }
 );
 
-const Tasks = mongoose.model("Tasks",schemaTasks);
+export default mongoose.model("Student", Student);
 
-export default {
-    schemaTasks,
-    Tasks
-}

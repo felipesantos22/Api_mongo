@@ -1,9 +1,9 @@
 import express from 'express';
-import routerTasks from '../routes/router.tasks';
+import routerStudent from '../routes/router.student';
 
 const app = express();
 app.use(express.json());
 
-app.use(routerTasks);
+app.use(routerStudent);
 
 export default app;
