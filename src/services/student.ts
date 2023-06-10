@@ -20,12 +20,21 @@ async function readStudentId(_id: mongoose.Types.ObjectId) {
 }
 
 async function updateStudent(_id: mongoose.Types.ObjectId, name: string) {
-    const update = await Student.findByIdAndUpdate({
-        _id,
-        name
-    });
+    const update = await Student.findByIdAndUpdate(
+        { _id },
+        { name }
+    );
     return update;
 }
+
+// Rota com parametros juntos não funcionou
+// async function updateStudent(_id: mongoose.Types.ObjectId, name: string) {
+//     const update = await Student.findByIdAndUpdate({
+//         _id,
+//         name
+//     });
+//     return update;
+// }
 
 async function deleteStudent(_id: mongoose.Types.ObjectId) {
     const deleteSt = await Student.findByIdAndDelete(_id);
